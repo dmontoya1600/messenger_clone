@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authenticate } from './store/session';
+import LoginForm from './components/auth/LoginForm/'
+
+
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    (async() => {
+      await dispatch(authenticate());
+      setLoaded(true);
+    })();
+  }, [dispatch]);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/login' exact={true} element={<LoginForm />} />
+        </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App
