@@ -1,0 +1,70 @@
+.login__page{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(33, 41, 49);
+}
+
+.login__logo{
+    color: cadetblue;
+    font-size: 100px;
+}
+
+.login__phrase{
+    color:white;
+    font-size: 45px;
+}
+
+.login__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.login__form > input{
+    width: 280px;
+    height: 33px;
+    margin-bottom: 18px;
+    background-color: rgb(124, 136, 149);
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.login__form > input:focus{
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px rgba(102, 175, 233, 0.6);
+}
+
+.login__form > input::placeholder{
+    color: rgb(204, 213, 222);
+}
+
+.login__form > input[type=text]{
+    margin-bottom: 18px;
+}
+
+.login__form > button{
+    width: 50%;
+    color: white;
+    background-color: cadetblue;
+    border: 0px;
+    border-radius: 7px;
+    height: 35px;
+    font-size: 18px;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+.login__form > button:hover{
+    background-color: rgb(71, 120, 122);
+}

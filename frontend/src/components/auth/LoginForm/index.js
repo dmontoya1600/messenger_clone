@@ -32,7 +32,13 @@ const LoginForm = () => {
 
   return (
     <div className='login__page'>
-        Testing Route
+        <i className="login__logo fab fa-facebook-messenger"></i>
+        <p className='login__phrase'>Connect with your favorite people.</p>
+        <form className='login__form'>
+            <input type='email' placeholder='Email' required />
+            <input type='password' placeholder='Password' required />
+            <button>Continue</button>
+        </form>
     </div>
   );
 };
